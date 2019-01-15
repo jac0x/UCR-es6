@@ -46,7 +46,7 @@ var BoardLayer = cc.Layer.extend({
                 var board = new CheckLabelScaleRotate(normal[j], select[j], select[j]);
                 var angle = Math.PI / 8 * i;
                 board.setAnchorPoint(0.5, 0.5);
-                board.x = originX + Math.cos(angle) * radius[j];
+                board.x = 5 + originX + Math.cos(angle) * radius[j];
                 board.y = originY + Math.sin(angle) * radius[j];
                 board.setValueScale(scale[j]);
                 board.checkbox.addTouchEventListener(this.onBoard, this);
@@ -156,7 +156,7 @@ var CanLayer = cc.Layer.extend({
             var can = new CheckLabelScale(res.cannormalbg, res.canselectbg, res.canselectbg);
             can.x = size.width / 2 - firstWidth * (firstRow / 2 - i - 0.5);
             can.y = size.height / 2 - 200;
-            can.setSize(firstWidth - 2, -1);
+            can.setSize(firstWidth - 8, -1);
             can.checkbox.addTouchEventListener(this.onCandidate, this);
             this.candidates.push(can);
             this.addChild(can);
@@ -166,8 +166,8 @@ var CanLayer = cc.Layer.extend({
         for (i = 0; i < secondRow; i++) {
             var can = new CheckLabelScale(res.cannormalbg, res.canselectbg, res.canselectbg);
             can.x = size.width / 2 - secondWidth * (secondRow / 2 - i - 0.5);
-            can.y = size.height / 2 - 250;
-            can.setSize(secondWidth - 2, -1);
+            can.y = size.height / 2 - 260;
+            can.setSize(secondWidth - 8, -1);
             can.checkbox.addTouchEventListener(this.onCandidate, this);
             this.candidates.push(can);
             this.addChild(can);
